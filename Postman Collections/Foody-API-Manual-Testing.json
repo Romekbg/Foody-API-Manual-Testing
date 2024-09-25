@@ -1,0 +1,251 @@
+{
+	"info": {
+		"_postman_id": "81bc10ef-7bd4-4b2d-a311-f99ff6534bfb",
+		"name": "Foody API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Supported Methods",
+			"id": "0f33f4f5-e30a-47a4-a001-f64310028266",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://softuni-qa-loadbalancer-2137572849.eu-north-1.elb.amazonaws.com:86/api/Info/Methods"
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"id": "f313ce76-f734-4d64-8295-0e019bb40ff5",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\": \"Romek123\",\r\n    \"firstName\": \"Ivo\",\r\n    \"midName\": \"Ivanov\",\r\n    \"lastName\": \"Stefanov\",\r\n    \"email\": \"romek_bg@mail.bg\",\r\n    \"password\": \"Romek1\",\r\n    \"rePassword\": \"Romek1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://softuni-qa-loadbalancer-2137572849.eu-north-1.elb.amazonaws.com:86/api/User/Create"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Authentication Token",
+			"id": "b683134a-7602-433c-a08a-4ba20baaf816",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\": \"Romek123\",\r\n    \"password\": \"Romek1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://softuni-qa-loadbalancer-2137572849.eu-north-1.elb.amazonaws.com:86/api/User/Authentication"
+			},
+			"response": []
+		},
+		{
+			"name": "Food Create",
+			"id": "73b90ff6-4082-411b-a8d9-6a71a60ff209",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKd3RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiI2ZTFjMGZhNS1kZWYzLTQ2YjgtYjdlMi0zNmU5NWMwNzk2MmQiLCJpYXQiOiIwOS8wOC8yMDI0IDExOjA2OjExIiwiVXNlcklkIjoiOTU5NzIzYTAtNmI1Zi00NGQ4LWVmNjItMDhkY2M5MWY0NDc1IiwiRW1haWwiOiJyb21la19iZ0BtYWlsLmJnIiwiVXNlck5hbWUiOiJSb21lazEyMyIsImV4cCI6MTcyNTgxNTE3MSwiaXNzIjoiRm9vZHlfQXBwX1NvZnRVbmkiLCJhdWQiOiJGb29keV9XZWJBUElfU29mdFVuaSJ9.aI3v2LCuwQtvpefkQhgS1DbWUmmTtuBto5qHSDgP0-4"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Pasta\",\r\n    \"description\": \"Bolognese\",\r\n    \"url\": \"https://images.immediate.co.uk/production/volatile/sites/30/2020/08/the-best-spaghetti-bolognese-7e83155.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://softuni-qa-loadbalancer-2137572849.eu-north-1.elb.amazonaws.com:86/api/Food/Create"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Foods",
+			"id": "bbe73e45-a92f-472d-9226-bd339ed53beb",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKd3RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiI2ZTFjMGZhNS1kZWYzLTQ2YjgtYjdlMi0zNmU5NWMwNzk2MmQiLCJpYXQiOiIwOS8wOC8yMDI0IDExOjA2OjExIiwiVXNlcklkIjoiOTU5NzIzYTAtNmI1Zi00NGQ4LWVmNjItMDhkY2M5MWY0NDc1IiwiRW1haWwiOiJyb21la19iZ0BtYWlsLmJnIiwiVXNlck5hbWUiOiJSb21lazEyMyIsImV4cCI6MTcyNTgxNTE3MSwiaXNzIjoiRm9vZHlfQXBwX1NvZnRVbmkiLCJhdWQiOiJGb29keV9XZWJBUElfU29mdFVuaSJ9.aI3v2LCuwQtvpefkQhgS1DbWUmmTtuBto5qHSDgP0-4"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://softuni-qa-loadbalancer-2137572849.eu-north-1.elb.amazonaws.com:86/api/Food/All"
+			},
+			"response": []
+		},
+		{
+			"name": "Search Food",
+			"id": "9dc62c19-c677-46b8-a22c-03a4acdf991f",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKd3RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiI2ZTFjMGZhNS1kZWYzLTQ2YjgtYjdlMi0zNmU5NWMwNzk2MmQiLCJpYXQiOiIwOS8wOC8yMDI0IDExOjA2OjExIiwiVXNlcklkIjoiOTU5NzIzYTAtNmI1Zi00NGQ4LWVmNjItMDhkY2M5MWY0NDc1IiwiRW1haWwiOiJyb21la19iZ0BtYWlsLmJnIiwiVXNlck5hbWUiOiJSb21lazEyMyIsImV4cCI6MTcyNTgxNTE3MSwiaXNzIjoiRm9vZHlfQXBwX1NvZnRVbmkiLCJhdWQiOiJGb29keV9XZWJBUElfU29mdFVuaSJ9.aI3v2LCuwQtvpefkQhgS1DbWUmmTtuBto5qHSDgP0-4"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://softuni-qa-loadbalancer-2137572849.eu-north-1.elb.amazonaws.com:86/api/Food/Search?keyword=Pasta",
+					"protocol": "http",
+					"host": [
+						"softuni-qa-loadbalancer-2137572849",
+						"eu-north-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"port": "86",
+					"path": [
+						"api",
+						"Food",
+						"Search"
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "Pasta"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Food",
+			"id": "b89eb763-ffce-4e16-8014-ccf837734b0d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKd3RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiI2ZTFjMGZhNS1kZWYzLTQ2YjgtYjdlMi0zNmU5NWMwNzk2MmQiLCJpYXQiOiIwOS8wOC8yMDI0IDExOjA2OjExIiwiVXNlcklkIjoiOTU5NzIzYTAtNmI1Zi00NGQ4LWVmNjItMDhkY2M5MWY0NDc1IiwiRW1haWwiOiJyb21la19iZ0BtYWlsLmJnIiwiVXNlck5hbWUiOiJSb21lazEyMyIsImV4cCI6MTcyNTgxNTE3MSwiaXNzIjoiRm9vZHlfQXBwX1NvZnRVbmkiLCJhdWQiOiJGb29keV9XZWJBUElfU29mdFVuaSJ9.aI3v2LCuwQtvpefkQhgS1DbWUmmTtuBto5qHSDgP0-4"
+					}
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"path\": \"/name\",\r\n        \"op\": \"replace\",\r\n        \"value\": \"Spagetti\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://softuni-qa-loadbalancer-2137572849.eu-north-1.elb.amazonaws.com:86/api/Food/Edit/f6c75934-0a6a-4c4e-6b55-08dcc9219a51?Keyword=Spagetti",
+					"protocol": "http",
+					"host": [
+						"softuni-qa-loadbalancer-2137572849",
+						"eu-north-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"port": "86",
+					"path": [
+						"api",
+						"Food",
+						"Edit",
+						"f6c75934-0a6a-4c4e-6b55-08dcc9219a51"
+					],
+					"query": [
+						{
+							"key": "Keyword",
+							"value": "Spagetti"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Food",
+			"id": "2704b5fc-fd25-4158-9f8d-c7e5121e9992",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKd3RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiI2ZTFjMGZhNS1kZWYzLTQ2YjgtYjdlMi0zNmU5NWMwNzk2MmQiLCJpYXQiOiIwOS8wOC8yMDI0IDExOjA2OjExIiwiVXNlcklkIjoiOTU5NzIzYTAtNmI1Zi00NGQ4LWVmNjItMDhkY2M5MWY0NDc1IiwiRW1haWwiOiJyb21la19iZ0BtYWlsLmJnIiwiVXNlck5hbWUiOiJSb21lazEyMyIsImV4cCI6MTcyNTgxNTE3MSwiaXNzIjoiRm9vZHlfQXBwX1NvZnRVbmkiLCJhdWQiOiJGb29keV9XZWJBUElfU29mdFVuaSJ9.aI3v2LCuwQtvpefkQhgS1DbWUmmTtuBto5qHSDgP0-4"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://softuni-qa-loadbalancer-2137572849.eu-north-1.elb.amazonaws.com:86/api/Food/Delete/f6c75934-0a6a-4c4e-6b55-08dcc9219a51"
+			},
+			"response": []
+		}
+	]
+}
